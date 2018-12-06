@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+    <variable
+        name="viewModel"
+        type="com.ezyplanet.thousandhands.driver.ui.activity.pickup.TaxiPickUpVM" />
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/app_444444"
+
+
+    android:layout_height="match_parent">
+
+    <TextView
+        android:padding="@dimen/padding"
+        android:layout_width="match_parent"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text30pt"
+       android:fontFamily="@font/roboto_light"
+        android:text="12 Hai Bà Trưng, Bến Nghé, District 1, Thanh Pho Ho Chi Minh City"
+
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/tvPaymentType"
+        android:text="GrapPay"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:paddingRight="3dp"
+        android:layout_marginTop="@dimen/margin"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:paddingLeft="3dp"
+        android:textColor="@color/blue_4a8de4"
+        android:textSize="@dimen/text28pt"
+
+
+        android:fontFamily="@font/roboto_light"
+        android:background="@drawable/bg_taxi_bt_border_blu"
+        android:layout_height="wrap_content" />
+     <View
+        android:layout_width="match_parent"
+        style="@style/divider_vertical"
+         android:layout_marginTop="@dimen/dp_5"
+        android:layout_height="1dp"
+        />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:id="@+id/tvPaymentAmount"
+          android:layout_marginLeft="@dimen/dp_5"
+          android:fontFamily="@font/roboto_light"
+          android:text="[$200,000 - $400,000]"
+          android:textSize="@dimen/text28pt"
+          android:layout_marginTop="@dimen/dp_5"
+          android:textColor="@color/app_cecece"
+          android:layout_height="wrap_content" />
+    <FrameLayout
+        android:layout_marginTop="@dimen/dp_15"
+        android:layout_width="match_parent"
+        android:id="@+id/frameMap"
+        android:layout_height="270dp">
+    </FrameLayout>
+   <com.ezyplanet.thousandhands.driver.ui.widget.WidgetTaxiPickUpBottom
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
+
+</LinearLayout>
+</layout>

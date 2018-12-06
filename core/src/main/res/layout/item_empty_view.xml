@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="item"
+            type="String" />
+
+        <variable
+            name="viewModel"
+            type="com.ezyplanet.thousandhands.core.ui.base.BaseViewModel" />
+
+    </data>
+<RelativeLayout
+
+    android:id="@+id/relSomethingWrong"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+
+    android:layout_height="match_parent"
+
+    >
+
+    <TextView
+        android:id="@+id/tvSomthingWrong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:fontFamily=""
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="@{viewModel.getEmptyString(context)}"
+        android:textColor="@color/app_444444"
+        android:textSize="16sp"
+         />
+
+
+
+</RelativeLayout>
+</layout>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="number_of_child_comments_per_parent_to_display">2</integer>
+    <integer name="number_of_parent_comments_to_display_on_task_details">7</integer>
+</resources>

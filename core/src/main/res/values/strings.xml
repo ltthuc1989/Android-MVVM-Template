@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">THShared</string>
+    <string name="OK">OK</string>
+    <string name="no_data">No data</string>
+    <string name="dialog_action_ok">OK</string>
+    <string name="dialog_error_title">Oops</string>
+    <string name="retry">Retry</string>
+    <string name="cancel">Cancel</string>
+    <string name="can_not_connect_to_server">Could not connect to our system. Please check your internet!</string>
+    <string name="something_wrong">Data is not correct. Please contact support centre</string>
+</resources>

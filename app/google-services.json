@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1057013711611",
+    "firebase_url": "https://thousandhands-st.firebaseio.com",
+    "project_id": "thousandhands-st",
+    "storage_bucket": "thousandhands-st.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1057013711611:android:076c9635fa66153b",
+        "android_client_info": {
+          "package_name": "com.ezyplanet.thousandhands.driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1057013711611-ga18vifl08gluqk9sd0agjls8t7u57p2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ezyplanet.thousandhands.driver",
+            "certificate_hash": "da7d398498752e62c79d1db03f36f3383d9897b3"
+          }
+        },
+        {
+          "client_id": "1057013711611-v9g6p4js919lvvgoqd5pjerfouoqbg5d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHLwCQLwldzT13cKDOZWPJL041QbhDOdY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1057013711611-v9g6p4js919lvvgoqd5pjerfouoqbg5d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

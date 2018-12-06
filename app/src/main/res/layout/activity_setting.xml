@@ -1,0 +1,150 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <variable
+            name="viewModel"
+            type="com.ezyplanet.thousandhands.driver.ui.activity.setting.SettingVM" />
+
+    </data>
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/padding">
+
+
+        <TextView
+            android:id="@+id/lb_language"
+            style="@style/tv_field"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:gravity="bottom"
+            android:padding="@dimen/padding"
+            android:text="@string/Language"
+            android:textColor="@color/app_444444"
+            android:textSize="@dimen/text32pt"
+            android:fontFamily="@font/roboto_light" />
+        <AutoCompleteTextView
+            android:id="@+id/dropListLanguage"
+            android:layout_width="@dimen/menu_language_width"
+            android:layout_height="40dp"
+            android:textColor="@color/app_40a3c4"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:singleLine="true"
+            android:gravity="center"
+            android:layout_alignParentTop="true"
+            android:textSize="@dimen/text30pt"
+            tools:text="12 lam son"
+            android:layout_above="@+id/switch_notification"
+            android:background="@drawable/bg_dropdown"
+            android:layout_alignParentRight="true"
+            android:focusable="false"
+            android:fontFamily="@font/roboto_light"
+            android:focusableInTouchMode="false"
+            />
+
+
+
+
+        <TextView
+            android:id="@+id/lb_notification"
+            style="@style/tv_field"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/lb_language"
+            android:gravity="bottom"
+            android:padding="@dimen/padding"
+            android:text="@string/Notifications"
+            android:textColor="@color/app_444444"
+
+            android:textSize="@dimen/text32pt"
+            android:fontFamily="@font/roboto_light" />
+
+        <Switch
+            android:id="@+id/switch_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@id/lb_notification"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/lb_notification"
+            android:checked="@={viewModel.notifyStatus}"
+
+
+
+            android:gravity="center"
+            android:textOff="@string/off"
+            android:textOn="@string/on" />
+
+
+        <TextView
+            android:id="@+id/lbchange_password"
+            style="@style/tv_field"
+            android:layout_width="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/lb_notification"
+            android:layout_centerVertical="true"
+            android:drawableRight="@mipmap/ic_arrow_right"
+            android:padding="@dimen/padding"
+            android:text="@string/change_password"
+            android:textColor="@color/app_444444"
+            android:onClick="@{()->viewModel.changePassword()}"
+
+            android:textSize="@dimen/text32pt"
+            android:fontFamily="@font/roboto_light" />
+
+
+        <TextView
+            android:id="@+id/lbLogout"
+            style="@style/tv_field"
+            android:layout_width="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/lbchange_password"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/padding"
+            android:onClick="@{()->viewModel.logoutClick()}"
+
+            android:text="@string/log_out"
+            android:textColor="@color/app_444444"
+            android:textSize="@dimen/text32pt"
+            android:fontFamily="@font/roboto_light" />
+
+        <TextView
+            android:id="@+id/lb_Country"
+            style="@style/tv_field"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/lbLogout"
+            android:layout_centerVertical="true"
+            android:gravity="bottom"
+            android:padding="@dimen/padding"
+            android:text="@string/country_test"
+            android:textColor="@color/colorBrown"
+            android:textSize="@dimen/text32pt"
+
+            android:visibility="gone"
+            android:fontFamily="@font/roboto_light" />
+
+
+
+        <TextView
+            android:id="@+id/tvCountryTest"
+            style="@style/tv_field"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/lbLogout"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:text="@string/Language"
+
+            android:textColor="@color/app_40a3c4"
+            android:textSize="18sp"
+            android:visibility="gone"
+            android:fontFamily="@font/roboto_light" />
+
+    </RelativeLayout>
+</layout>

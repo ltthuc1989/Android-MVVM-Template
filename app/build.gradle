@@ -1,0 +1,226 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
+apply plugin: 'io.fabric'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    signingConfigs {
+    }
+    compileSdkVersion rootProject.ext.androidCompileSdkVersion
+
+    dexOptions {
+        incremental false
+        javaMaxHeapSize "2g"
+    }
+    defaultConfig {
+        applicationId "com.ezyplanet.thousandhands.driver"
+        minSdkVersion rootProject.androidMinSdkVersion
+        targetSdkVersion rootProject.androidTargetSdkVersion
+        versionCode 256
+        multiDexEnabled true
+        versionName "1.6.2"
+        multiDexEnabled true
+        renderscriptTargetApi 22
+        renderscriptSupportModeEnabled true
+
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    androidExtensions {
+        experimental = true
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+        disable "InvalidPackage", "MissingTranslation"
+    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+    buildTypes {
+        release {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+    flavorDimensions "default"
+    productFlavors {
+        mockup {
+            resConfigs "en", "xxhdpi"
+            minSdkVersion 21
+            ext.enableCrashlytics = false
+
+            applicationId "com.ezyplanet.thousandhands.driver"
+            manifestPlaceholders = [
+                    map_key                        : "AIzaSyCoeldy_AVU4e-RnUElNihnPHRiLd3PUtE",
+
+                    manifestApplicationId          : "com.ezyplanet.thousandhands",
+                    onesignal_app_id               : "b227c728-4a79-48e7-9ab8-1f2819fb20b8",
+                    onesignal_google_project_number: "579040847999"]
+            // onesignal_app_id               : "16d53240-ddad-4307-a7d2-9752d97dce87",
+            //  onesignal_google_project_number: "359704989670"]
+
+            // buildConfigField "String", "API_URL", "\"https://api.thousandhands.com\""
+            //buildConfigField "String", "APP_URL", "\"https://thousandhands.com/\""
+            buildConfigField "String", "API_URL", "\"https://st-api.thousandhands.com/\""
+            buildConfigField "String", "APP_URL", "\"https://st2.thousandhands.com/\""
+
+            buildConfigField "String", "SENDER_ID", "\"579040847999\""
+            buildConfigField "String", "CLIEN_ID_PAYPAL", "\"AUkEnGxJgqy2mqBkG6JpDwKlFZOiCjt8w-1_LUsEO7RCS3jeTNLK911h8FyoWdPZLLnsOd3GxZ8dzzt0\""
+            buildConfigField "String", "MAP_API_KEY", "\"AIzaSyD5T4Ijglx6qPFI2U8MQ3mH8wkEEJrFU1k\""
+            buildConfigField "String", "MAP_GEO_CODING_API_KEY", "\"AIzaSyCmSFvk2Zu0bWxEQDRMFswN-js-0E9QKfU\""
+            buildConfigField "String", "MAP_DIRECTION_API_KEY", "\"AIzaSyCZxmi7zMn3yxzWODaY3eYZZbx1V1cADsc\""
+            buildConfigField "String", "ENVIRONMENT_PAYPAL", "\"sandbox\""
+            buildConfigField "String", "AUTOCOMPLETE_API_KEY", "\"AIzaSyBEL2K3mgTpZ2zzg4EF1zx3xEU0ZrTc510\""
+            buildConfigField "boolean", "IS_CAN_DEPLOY", "true"
+            buildConfigField "String", "CAT_URL", "\"https://st-api.thousandhands.com/api/v1/categories/\""
+            buildConfigField "String", "VN_PAY", "\"api/v1/vnpay/result?code=\""
+            buildConfigField "String", "VN_PAY_TOP_UP", "\"https://st-api.thousandhands.com/api/v1/vnpay/topup?\""
+            buildConfigField "String","ONE_PAY","\"api/v1/onepay/result?code=\""
+            //buildConfigField "String", "VN_PAY", "\"api/v1/vnpay/result?code=\""
+           // buildConfigField "String", "VN_PAY_TOP_UP", "\"https://api.thousandhands.com/api/v1/vnpay/topup?\""
+            buildConfigField "String", "BOOST", "\"api/v1/boost/mobile_result?code=\""
+
+
+        }
+        staging {
+            applicationId "com.ezyplanet.thousandhands.staging"
+            manifestPlaceholders = [
+                    map_key                        : "AIzaSyAtVTBoWGJXaD1DHq3BwD8gI0cxj12kanw",
+                    manifestApplicationId          : "com.ezyplanet.thousandhands",
+                    onesignal_app_id               : "b227c728-4a79-48e7-9ab8-1f2819fb20b8",
+                    onesignal_google_project_number: "579040847999"]
+            buildConfigField "String", "API_URL", "\"https://st-api.thousandhands.com\""
+            buildConfigField "String", "APP_URL", "\"https://st2.thousandhands.com/\""
+            buildConfigField "String", "SENDER_ID", "\"579040847999\""
+            buildConfigField "String", "CLIEN_ID_PAYPAL", "\"AUkEnGxJgqy2mqBkG6JpDwKlFZOiCjt8w-1_LUsEO7RCS3jeTNLK911h8FyoWdPZLLnsOd3GxZ8dzzt0\""
+            buildConfigField "String", "ENVIRONMENT_PAYPAL", "\"sandbox\""
+            buildConfigField "String", "MAP_GEO_CODING_API_KEY", "\"AIzaSyCmSFvk2Zu0bWxEQDRMFswN-js-0E9QKfU\""
+            buildConfigField "String", "MAP_API_KEY", "\"AIzaSyBckmadJD0wPUb08JHAYAO_3up_wUJ2-y0\""
+            buildConfigField "String", "MAP_DIRECTION_API_KEY", "\"AIzaSyA_1c3fBhG7s_4EZTvPtx7lds_SvJsUh8g\""
+            buildConfigField "String", "AUTOCOMPLETE_API_KEY", "\"AIzaSyD8sN_aUvDSXZ5Aln1POvG4d90o-8FH054\""
+            buildConfigField "boolean", "IS_CAN_DEPLOY", "true"
+            buildConfigField "String", "CAT_URL", "\"https://st-api.thousandhands.com/api/v1/categories/\""
+            buildConfigField "String","ONE_PAY","\"api/v1/onepay/result?code=\""
+            buildConfigField "String", "VN_PAY", "\"api/v1/vnpay/result?code=\""
+            buildConfigField "String", "VN_PAY_TOP_UP", "\"https://st-api.thousandhands.com/api/v1/vnpay/topup?\""
+            buildConfigField "String", "BOOST", "\"api/v1/boost/mobile_result?code=\""
+
+        }
+
+        production {
+            applicationId "com.ezyplanet.thousandhands.driver"
+            manifestPlaceholders = [
+                    map_key                        : "AIzaSyDwxsCbb7YKy21cAOvZUCPEctISfRVBRLs",
+                    manifestApplicationId          : "com.ezyplanet.thousandhands",
+                    onesignal_app_id               : "16d53240-ddad-4307-a7d2-9752d97dce87",
+                    onesignal_google_project_number: "359704989670"]
+            buildConfigField "String", "API_URL", "\"https://api.thousandhands.com\""
+            buildConfigField "String", "APP_URL", "\"https://thousandhands.com/\""
+            buildConfigField "String", "SENDER_ID", '"359704989670"'
+            buildConfigField "String", "CLIEN_ID_PAYPAL", "\"AQiM1Mye938aJbs3gNEr0rIoNfOUqGAac4tGq7nCp-cd45WU6wU-Bem-VHntruQ2JoPIAL0LrA36NloV\""
+            buildConfigField "String", "ENVIRONMENT_PAYPAL", "\"live\""
+            buildConfigField "String", "MAP_API_KEY", "\"AIzaSyBEL2K3mgTpZ2zzg4EF1zx3xEU0ZrTc510\""
+            buildConfigField "String", "MAP_GEO_CODING_API_KEY", "\"AIzaSyDr2TyO66G38hFnKr9NPEMt5fBNWVIuq74\""
+            buildConfigField "String", "MAP_DIRECTION_API_KEY", "\"AIzaSyCZxmi7zMn3yxzWODaY3eYZZbx1V1cADsc\""
+            buildConfigField "String", "AUTOCOMPLETE_API_KEY", "\"AIzaSyD8sN_aUvDSXZ5Aln1POvG4d90o-8FH054\""
+            buildConfigField "boolean", "IS_CAN_DEPLOY", "false"
+            buildConfigField "String", "CAT_URL", "\"https://api.thousandhands.com/api/v1/categories/\""
+            buildConfigField "String","ONE_PAY","\"api/v1/onepay/result?code=\""
+            buildConfigField "String", "VN_PAY", "\"api/v1/vnpay/result?code=\""
+            buildConfigField "String", "VN_PAY_TOP_UP", "\"https://api.thousandhands.com/api/v1/vnpay/topup?\""
+            buildConfigField "String", "BOOST", "\"api/v1/boost/mobile_result?code=\""
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(":core")
+
+    def appDependencies = rootProject.ext.dependencies
+
+    implementation('com.crashlytics.sdk.android:crashlytics:2.6.8@aar') {
+        transitive = true
+    }
+    // Android SDK
+
+    implementation appDependencies.play_services.analytics
+    implementation appDependencies.play_services.gcm
+    implementation appDependencies.play_services.maps
+    implementation appDependencies.play_services.location
+    implementation appDependencies.play_services.places
+    implementation appDependencies.play_services.auth
+    implementation appDependencies.mapUtil
+
+
+    //facebook
+
+    implementation appDependencies.facebook.facebookSdk
+    implementation appDependencies.facebook.accountKit
+    implementation appDependencies.facebook.stetho
+    implementation appDependencies.facebook.stetho_okhttp3
+
+
+
+    implementation appDependencies.circleImageView
+
+
+
+
+
+
+
+    implementation('io.socket:socket.io-client:1.0.0') {
+        // excluding org.json which is provided by Android
+        exclude group: 'org.json', module: 'json'
+    }
+
+    implementation 'com.github.f0ris.sweetalert:library:1.5.1'
+
+
+
+    implementation appDependencies.firebase.core
+    implementation appDependencies.firebase.iid
+    implementation appDependencies.firebase.messaging
+    implementation appDependencies.firebase.jobdispatcher
+
+
+
+
+
+    // Dagger
+    implementation appDependencies.dagger
+    implementation appDependencies.daggerAndroid
+    kapt appDependencies.daggerCompiler
+    kapt appDependencies.daggerAndroidCompiler
+
+
+
+}
+configurations.all {
+    resolutionStrategy.eachDependency { details ->
+        def requested = details.requested
+//        if (requested.group == 'com.google.android.gms') {
+//            if (!requested.name.startsWith("multidex")) {
+//                details.useVersion '12.0.1'
+//            }
+//        }
+    }
+}
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
+    mavenCentral()
+
+}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="http://schemas.android.com/tools">
+
+    <string name="facebook_app_id">925504864234050</string>
+    <string name="facebook_account_kit_token">b7286999b8ac18762a8753f94f868e48</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <string name="provider_settings_title">Location services disabled</string>
+    <string name="provider_settings_message">To Find Work, please enable this service so the app can find your location!</string>
+    <string name="provider_settings_yes">Yes</string>
+    <string name="provider_settings_no">No</string>
+    <string name="sign_up_or_login_with">Sign up or login with</string>
+    <string name="facebook">Facebook</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="login_or_sign_up"><![CDATA[<u>Click here to log in with an email address</u>]]></string>
+    <string name="switch_account"><u>Switch Account</u></string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="input_email">Enter Email</string>
+    <string name="app_name">Thousand Hands</string>
+    <string name="password">Password</string>
+    <string name="input_password">Enter Password</string>
+    <string name="log_in">Log In</string>
+    <string name="forgot_password"><u>Forgot password?</u></string>
+    <string name="th_slogan">PREMIUM NETWORK OF\nProfessional Partners</string>
+    <string name="my_jobs">Job History</string>
+    <string name="my_tasks">Posted Jobs</string>
+    <string name="my_profile">My Profile</string>
+    <string name="Payout">Withdraw Request</string>
+    <string name="Notifications">Notifications</string>
+    <string name="Settings">Settings</string>
+    <string name="About">About</string>
+    <string name="ewallet">E-Wallet</string>
+    <string name="support">Support</string>
+    <string name="find_work">Find Work</string>
+    <string name="support_center">Support Centre</string>
+    <string name="notification">Notification</string>
+    <string name="Messages">Messages</string>
+    <string name="message">Messages</string>
+    <string name="enter_the_verification_code">Please enter the verification code that\n was sent to your phone number</string>
+    <string name="set_password">Set Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="save">Save</string>
+    <string name="log_out"><u>Logout</u></string>
+    <string name="Language">Language</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="change_password">Change Password</string>
+    <string name="country_test">Country Test</string>
+    <string name="please_enter_password">Please enter password</string>
+    <string name="password_does_not_match">Password does not match</string>
+</resources>

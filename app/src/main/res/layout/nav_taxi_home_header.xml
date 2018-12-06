@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.ezyplanet.thousandhands.driver.ui.activity.home.TaxiHomeMD"/>
+        <variable
+            name="listener"
+            type="com.ezyplanet.thousandhands.driver.ui.widget.listener.HomeNavigationViewNav"/>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/nav_header">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="@dimen/dp_100"
+                    android:layout_height="@dimen/dp_100"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="40dp"
+                    android:src="@color/white"
+                    srcImageUrl="@{viewModel.avatarUrl}"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="2dp" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="@style/ProgressBarSmall"
+                    android:layout_alignTop="@id/profile_image"
+                    android:layout_alignBottom="@id/profile_image"
+                    android:layout_centerHorizontal="true" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/profile_image"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_top"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp">
+
+                        <TextView
+                            android:id="@+id/tv_username"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:lines="1"
+                            android:paddingBottom="4dp"
+                            android:textColor="#FFF"
+                            android:textSize="@dimen/text36pt"
+                            android:fontFamily="@font/roboto_medium"
+
+                            android:text="@{viewModel.driverName}"
+                            tools:text="Tom Readday" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+                android:paddingLeft="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/relMyJob"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/nav_item_height">
+
+                    <TextView
+                        android:id="@+id/tvMyJobs"
+                        style="@style/nav_item"
+
+
+                        android:text="@string/my_jobs"
+                        android:textColor="@color/dark_gray"
+                        android:fontFamily="@font/roboto_light"
+                        />
+
+                    <TextView
+                        android:id="@+id/tvMyJobsCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+
+                        android:layout_marginRight="10dp"
+                        android:text="0"
+                        android:fontFamily="@font/roboto"
+                        tools:text="1111" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relFindWork"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/nav_item_height">
+
+                    <TextView
+                        android:id="@+id/tvFindWork"
+                        style="@style/nav_item"
+                        android:text="@string/find_work"
+                        android:textColor="@color/dark_gray"
+                        android:fontFamily="@font/roboto_light" />
+
+                    <TextView
+                        android:id="@+id/tvFindJobsCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:text="0"
+                        android:visibility="gone"
+                        android:fontFamily="@font/roboto" />
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvEwallet"
+                    style="@style/nav_item"
+                    android:text="@string/ewallet"
+                    android:textColor="@color/dark_gray"
+                    android:fontFamily="@font/roboto_light"
+                    />
+
+
+
+                <TextView
+                    android:id="@+id/tvPayout"
+                    style="@style/nav_item"
+                    android:text="@string/Payout"
+                    android:textColor="@color/dark_gray"
+                    android:fontFamily="@font/roboto_light"/>
+
+
+
+                <TextView
+                    android:id="@+id/tvAbout"
+                    style="@style/nav_item"
+                    android:text="@string/support_center"
+                    android:textColor="@color/dark_gray"
+                    android:fontFamily="@font/roboto_light" />
+
+                <TextView
+                    android:id="@+id/tvSetting"
+                    style="@style/nav_item"
+                    android:text="@string/Settings"
+                    android:onClick="@{()->listener.onSettingClick()}"
+                    android:textColor="@color/dark_gray"
+                    android:fontFamily="@font/roboto_light" />
+
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>
